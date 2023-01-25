@@ -1,5 +1,5 @@
 # Jacob Auman
-# 1/23/23 Scratch work for lecture
+# 1/23/23 sandbox for lecture
 
 # Practice problem
 
@@ -27,25 +27,7 @@ print(f'Rectangle area of num1 is {area2}')
 
 area3 =
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Scratch
 
 x = 10
 print(x)
