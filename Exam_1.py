@@ -1,8 +1,26 @@
 # Jacob Auman
 # First exam Due 1/20/23
 
-#def marvelNumber(num):
+def marvelNumber(num):
+    if num <= 0:
+        print('Not a Positive Integer')
+    else:
+        for i in range(1, num+1):
+            divisor = num / i
+
+            if divisor != num & is_integer(divisor) == true:
+                properDivisor = []
+                properDivisor.append(divisor)
+
+            i = i + 1
+            print(divisor)
+    return
+
+num = 6
+marvelNumber(num)
+
 # '''
+
 #     A marvel number is a positive integer that is equal to the
 #     sum of its proper divisors. The smallest marvel number is 6,
 #     which is the sum of 1, 2, and 3. In other words, a marvel number is a
