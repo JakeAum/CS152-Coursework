@@ -1,23 +1,41 @@
 # Jacob Auman
 # First exam Due 1/20/23
 
+
+properDivisor = []
+
+def is_integer(num):
+    if num == round(num):
+        return True
+    else:
+        return False
+
 def marvelNumber(num):
-    if num <= 0:
+    if float(num) <= 0:
         print('Not a Positive Integer')
     else:
-        for i in range(1, num+1):
+        for i in range(1, int(num) + 1):
             divisor = num / i
+            i = i + 1
 
-            if divisor != num & is_integer(divisor) == true:
-                properDivisor = []
+            # Check if each divisor is valid
+            if divisor != num and is_integer(divisor) == True:
                 properDivisor.append(divisor)
 
-            i = i + 1
-            print(divisor)
-    return
+    if sum(properDivisor) == num:
+        return True
+    else:
+        return False
 
-num = 6
-marvelNumber(num)
+# Verification and Validation
+num = float(input('Enter Number: '))
+
+print(f'Testing Integer {num}')
+print(is_integer(num))
+
+print(f'Testing Marvel {num}')
+print(marvelNumber(num))
+
 
 # '''
 
@@ -95,27 +113,27 @@ def agesAndStages(yearOld):
 
 # Output Validation
 
-if agesAndStages(0) == "baby":
-    print("True")
-else:
-    print("False")
-if agesAndStages(1) == "toddler":
-     print("True")
-else:
-     print("False")
-if agesAndStages(2) == "toddler":
-     print("True")
-else:
-    print ("False")
-if agesAndStages(3) == "preschool":
-    print("True")
-else:
-    print ("False")
-if agesAndStages(5) == "gradeschooler":
-    print("True")
-else:
-    print ("False")
-if agesAndStages(21) == "adult":
-    print("True")
-else:
-    print ("False")
+# if agesAndStages(0) == "baby":
+#     print("True")
+# else:
+#     print("False")
+# if agesAndStages(1) == "toddler":
+#      print("True")
+# else:
+#      print("False")
+# if agesAndStages(2) == "toddler":
+#      print("True")
+# else:
+#     print ("False")
+# if agesAndStages(3) == "preschool":
+#     print("True")
+# else:
+#     print ("False")
+# if agesAndStages(5) == "gradeschooler":
+#     print("True")
+# else:
+#     print ("False")
+# if agesAndStages(21) == "adult":
+#     print("True")
+# else:
+#     print ("False")
