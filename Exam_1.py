@@ -11,30 +11,40 @@ def is_integer(num):
         return False
 
 def marvelNumber(num):
-    if float(num) <= 0:
-        print('Not a Positive Integer')
-    else:
-        for i in range(1, int(num) + 1):
-            divisor = num / i
-            i = i + 1
+    if  num < 0:
+        num = num * (-1)
 
-            # Check if each divisor is valid
-            if divisor != num and is_integer(divisor) == True:
-                properDivisor.append(divisor)
+    for i in range(1, int(num) + 1):
+        divisor = num / i
+        i = i + 1
+
+        # Check if each divisor is valid
+        if divisor != num and is_integer(divisor) == True:
+            properDivisor.append(divisor)
 
     if sum(properDivisor) == num:
         return True
     else:
         return False
+print(marvelNumber(28))
+def askForInput():
+    while input('Would you like to try again? Y/N \n') != 'N':
+        num = input('Enter your number ')
+        if marvelNumber(num) == True:
+            print(f'{num} is a Marvel Number!')
+        else:
+            print(f'{num} is not Marvel Number.')
+
+
 
 # Verification and Validation
-num = float(input('Enter Number: '))
 
-print(f'Testing Integer {num}')
-print(is_integer(num))
-
-print(f'Testing Marvel {num}')
-print(marvelNumber(num))
+#
+# print(f'Testing Integer {num}')
+# print(is_integer(num))
+#
+# print(f'Testing Marvel {num}')
+# print(marvelNumber(num))
 
 
 # '''
@@ -85,7 +95,7 @@ def agesAndStages(yearOld):
 
      return stage
 
-
+print(agesAndStages(int(input('Input age '))))
 
 
 
