@@ -15,7 +15,7 @@ def lineManage(customers):
     lst = []
     for i in range(0,customers):
         lst.append(i)
-    lst.append('now that’s a line!')
+    lst.append("now that’s a line!")
     return lst
 
 
