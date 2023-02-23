@@ -10,12 +10,13 @@ def generatingNewList(lst1, lst2):
     else:
         for index in range(len(lst1)):
             if (lst1[index] % 2 == 0) and (lst2[index] % 2 == 0):
-                newLst[index] = lst1[index] + lst2[index]
+                newLst.append(lst1[index] + lst2[index])
+            elif (lst1[index] % 2 != 0) and (lst2[index] % 2 != 0):
+                newLst.append(lst1[index] * lst2[index])
+            else:
+                newLst.append(lst1[index] - lst2[index])
 
     return newLst
-
-
-
 
     # '''
     # Generates a new list based on the following rules:
@@ -60,6 +61,16 @@ def generatingNewList(lst1, lst2):
 
 
 def generateListPrime(lst):
+    prime_lst = []
+    for val in lst:
+        if val > 1:
+            for i in range(2, val):
+                if (val % i) == 0:
+                    break
+            else:
+                prime_lst.append(val)
+    return prime_lst
+
      # '''
     # From the parameter lst, generate a new list containing the numbers of lst
     # that are prime numbers. Prime numbers are numbers greater than 1.
@@ -78,7 +89,6 @@ def generateListPrime(lst):
     #
     # '''
 
-
 def main():
     print("Making the calls of the implemented methods")
     # call the method generateListPrime
@@ -95,15 +105,14 @@ def main():
 
     #Testing
     print("Testing", "\n",
-    generatingNewList([2, 3, 40, 7], [10, 5, 15, 2]) ,"\n",  # the function would return [12, 15, 25, 5]
-    generatingNewList([2, 4, 6, 8], [10, 20, 30, 40]), "\n",   # the function would return [12, 24, 36, 48]
-    generatingNewList([3, 5, 7, 9], [11, 1, 5, 3]), "\n",  # the function would return [33, 5, 35, 27]
-    generatingNewList([2, 3], [10, 5, 15, 2]) ,"\n",  # the function would return []
-    generatingNewList([2, 4], [40]), "\n",  # the function would return []
-    generateListPrime([7, 9, 3, 11, 15, 12, 21, 41]), "\n",  # the function would return [7, 3, 11, 41]
-    generateListPrime([4, 6, 8, 10, 12]),"\n" # the function would return []
+        generatingNewList([2, 3, 40, 7], [10, 5, 15, 2]) ,"\n",  # the function would return [12, 15, 25, 5]
+        generatingNewList([2, 4, 6, 8], [10, 20, 30, 40]), "\n",   # the function would return [12, 24, 36, 48]
+        generatingNewList([3, 5, 7, 9], [11, 1, 5, 3]), "\n",  # the function would return [33, 5, 35, 27]
+        generatingNewList([2, 3], [10, 5, 15, 2]) ,"\n",  # the function would return []
+        generatingNewList([2, 4], [40]), "\n",  # the function would return []
+        generateListPrime([7, 9, 3, 11, 15, 12, 21, 41]), "\n",  # the function would return [7, 3, 11, 41]
+        generateListPrime([4, 6, 8, 10, 12]),"\n" # the function would return []
     )
-
 
 if __name__ == "__main__":
     main()
